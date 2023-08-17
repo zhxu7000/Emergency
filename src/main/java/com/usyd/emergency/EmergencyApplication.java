@@ -10,4 +10,5 @@ public class EmergencyApplication {
 		SpringApplication.run(EmergencyApplication.class, args);
 	}
 
+
 }
