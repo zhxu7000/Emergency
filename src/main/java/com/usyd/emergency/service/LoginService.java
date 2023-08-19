@@ -1,5 +1,7 @@
 package com.usyd.emergency.service;
 
+import com.usyd.emergency.constant.XError;
+import com.usyd.emergency.exception.ConflictException;
 import com.usyd.emergency.pojo.ResponseResult;
 import com.usyd.emergency.pojo.User;
 import com.usyd.emergency.utils.JwtUtil;
@@ -36,7 +38,7 @@ public class LoginService {
 
         //判断上面那行的authenticate是否为null，如果是则认证没通过，就抛出异常
         if(Objects.isNull(authenticate)){
-            throw new RuntimeException("login failed");
+            throw new ConflictException(XError.USERNAME_OR_PASSWORD_INCORRECT.getCode(), XError.USERNAME_OR_PASSWORD_INCORRECT.getMsg());
         }
 
         //如果认证通过，就使用userid生成一个jwt，然后把jwt存入ResponseResult后返回

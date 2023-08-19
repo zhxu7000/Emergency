@@ -1,5 +1,7 @@
 package com.usyd.emergency.filter;
 
+import com.usyd.emergency.constant.XError;
+import com.usyd.emergency.exception.ConflictException;
 import com.usyd.emergency.pojo.User;
 import com.usyd.emergency.utils.JwtUtil;
 import com.usyd.emergency.utils.RedisCache;
@@ -46,7 +48,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
             userid = claims.getSubject();
         } catch (Exception e) {
             e.printStackTrace();
-            throw new RuntimeException("invalid token");
+            throw new ConflictException(-123, "invalid token");
         }
         //从redis中获取用户信息
         String redisKey = "login:" + userid;
@@ -55,7 +57,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         //判断获取到的用户信息是否为空，因为redis里面可能并不存在这个用户信息，例如缓存过期了
         if(Objects.isNull(loginUser)){
             //抛出一个异常
-            throw new RuntimeException("user has not logged in yet");
+            throw new ConflictException(XError.UNAUTHORIZED.getCode(), XError.UNAUTHORIZED.getMsg());
         }
 
         //把最终的LoginUser用户信息，通过setAuthentication方法，存入SecurityContextHolder

@@ -1,5 +1,6 @@
 package com.usyd.emergency.controller;
 
+import com.usyd.emergency.exception.ConflictException;
 import com.usyd.emergency.pojo.User;
 import com.usyd.emergency.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class UserController {
 
     @RequestMapping("/test")
     public String test() {
-        return "test";
+        throw new ConflictException(-1, "error");
     }
     @RequestMapping("/user/all")
     public Iterable<User> getAll() {

@@ -1,6 +1,9 @@
 package com.usyd.emergency.config;
 
+import com.usyd.emergency.exception.AccessDeniedHandlerImpl;
+import com.usyd.emergency.exception.AuthenticationEntryPointImpl;
 import com.usyd.emergency.filter.JwtAuthenticationTokenFilter;
+import com.usyd.emergency.utils.XUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -15,6 +18,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import java.util.ArrayList;
@@ -46,6 +50,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 除上面外的所有请求全部需要鉴权认证
                 .anyRequest().authenticated();
 
+        http.exceptionHandling().accessDeniedHandler(new AccessDeniedHandlerImpl());
+        http.exceptionHandling().authenticationEntryPoint(new AuthenticationEntryPointImpl());
 
         http.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
     }
@@ -63,7 +69,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
 
 
 }
