@@ -5,10 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fd88bec-6235-4c90-82cc-8925e2af3cb1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/pojo/Disease.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/repository/DiseaseRepository.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/service/DiseaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/pojo/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/EmergencyApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/EmergencyApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/config/RedisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/config/RedisConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/filter/FilterChainExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/filter/FilterChainExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/filter/JwtAuthenticationTokenFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/filter/JwtAuthenticationTokenFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/pojo/Disease.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/pojo/Disease.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/pojo/ResponseResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/pojo/ResponseResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/pojo/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/pojo/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/repository/DiseaseRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/repository/DiseaseRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/service/DiseaseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/service/DiseaseService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/service/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/service/LoginService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/utils/Context.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/utils/Context.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/utils/FastJsonRedisSerializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/utils/FastJsonRedisSerializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/utils/JwtUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/utils/JwtUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/utils/RedisCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/utils/RedisCache.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/utils/WebUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/utils/WebUtils.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,29 +84,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.27793974&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;b65d50673fb197078c78f3a448a958bf&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.27793974",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "b65d50673fb197078c78f3a448a958bf"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="EmergencyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="emergency" />
@@ -129,5 +153,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/usyd/emergency/pojo/Disease.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
