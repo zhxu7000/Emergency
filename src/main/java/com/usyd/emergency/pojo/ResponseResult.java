@@ -1,12 +1,15 @@
 package com.usyd.emergency.pojo;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.usyd.emergency.constant.XError;
+import lombok.Getter;
 
 /**
  * @author 35238
  * @date 2023/7/11 0011 15:43
  */
 //响应类
+    @Getter
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResponseResult<T> {
     /**
@@ -32,29 +35,6 @@ public class ResponseResult<T> {
         this.data = data;
     }
 
-    public Integer getCode() {
-        return code;
-    }
-
-    public void setCode(Integer code) {
-        this.code = code;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
-    }
 
     public ResponseResult(Integer code, String msg, T data) {
         this.code = code;
