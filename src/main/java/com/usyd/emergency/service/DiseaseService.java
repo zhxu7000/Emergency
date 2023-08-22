@@ -17,6 +17,14 @@ public class DiseaseService {
         this.diseaseRepository = diseaseRepository;
     }
 
+    public Disease addDisease(String diseaseName,int level){
+        Disease disease = new Disease();
+        disease.setDiseaseName("covid19");
+        disease.setLevel(1);
+        diseaseRepository.save(disease);
+        return disease;
+    }
+
     public Disease findDiseaseByName(String diseaseName) {
         return diseaseRepository.findByDiseaseName(diseaseName);
     }
