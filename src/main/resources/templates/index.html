@@ -18,10 +18,12 @@
             ]);
 
             var map = new google.visualization.Map(document.getElementById('map_div'));
-            index.draw(data, {
+            map.draw(data, {
                 showTooltip: true,
                 showInfoWindow: true
             });
+
+
         }
 
     </script>

@@ -5,11 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fd88bec-6235-4c90-82cc-8925e2af3cb1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/controller/DiseaseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/controller/MapController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/template/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/service/DiseaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/service/DiseaseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/controller/DiseaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/controller/DiseaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/filter/FilterChainExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/filter/JwtAuthenticationTokenFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/filter/JwtAuthenticationTokenFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/pojo/ResponseResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/pojo/ResponseResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/pojo/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/pojo/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/service/DiseaseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/service/DiseaseService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/service/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/service/LoginService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/template/index.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +95,12 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/template" />
+      <recent name="$PROJECT_DIR$/src/main/resources/static" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="EmergencyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="emergency" />
