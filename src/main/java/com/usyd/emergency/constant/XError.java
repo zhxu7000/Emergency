@@ -7,6 +7,8 @@ public enum XError {
     SUCCESS(0, "success"),
     UNAUTHORIZED(401, "authentification failed"),
     USERNAME_OR_PASSWORD_INCORRECT(401, "username or password is incorrect"),
+
+    DATABASE_ERROR(-2,"database error"),
     UNKNOWN_ERROR(-1, "unknown error");
 
     public int code;
