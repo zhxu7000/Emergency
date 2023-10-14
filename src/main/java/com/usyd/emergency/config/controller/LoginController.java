@@ -1,4 +1,4 @@
-package com.usyd.emergency.controller;
+package com.usyd.emergency.config.controller;
 
 import com.usyd.emergency.pojo.ResponseResult;
 import com.usyd.emergency.pojo.User;
