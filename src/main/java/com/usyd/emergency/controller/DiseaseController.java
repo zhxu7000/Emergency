@@ -35,7 +35,7 @@ public class DiseaseController {
         disease.setLevel(add.diseaseLevel);
         diseaseService.addDisease(disease);
 
-        return new ResponseResult(200,"save disease info successful");
+        return new ResponseResult(200,"add disease successful");
     }
 
     //delete disease by name

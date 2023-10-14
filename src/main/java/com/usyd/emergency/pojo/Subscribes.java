@@ -1,24 +1,24 @@
 package com.usyd.emergency.pojo;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.usyd.emergency.utils.MyKey;
 import lombok.Data;
 
 import javax.persistence.*;
 
 @Data
 @Entity
+@IdClass(MyKey.class)
 @Table(name = "subscribes")
 public class Subscribes {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "user_id", nullable = false)
+    @JsonProperty("user_id")
     private int userId;
-
+    @Id
     @Column(name = "disease_id", nullable = false)
+    @JsonProperty("disease_id")
     private int diseaseId;
 
-    private int preference;
-    public void setPreference(int preference) {
-        this.preference = preference;
-    }
 }
