@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="9fd88bec-6235-4c90-82cc-8925e2af3cb1" name="Changes" comment="" />
+=======
     <list default="true" id="9fd88bec-6235-4c90-82cc-8925e2af3cb1" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/aspect/ServiceLogAspect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/9252c6fb-7752-42d2-a0d2-bb1f30f3980f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9252c6fb-7752-42d2-a0d2-bb1f30f3980f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
     </list>
+>>>>>>> main
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Interface" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -60,6 +64,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.27793974&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;b65d50673fb197078c78f3a448a958bf&quot;
+=======
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
@@ -77,13 +100,20 @@
     "project.structure.side.proportion": "0.27793974",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "spring.configuration.checksum": "a3fa706f20bc0b7858b7ae6932261940"
+>>>>>>> main
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/template" />
+      <recent name="$PROJECT_DIR$/src/main/resources/static" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="EmergencyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="emergency" />
@@ -113,7 +143,12 @@
       <workItem from="1692337803524" duration="720000" />
       <workItem from="1692338856882" duration="1328000" />
       <workItem from="1692345631431" duration="13969000" />
+<<<<<<< HEAD
+      <workItem from="1692688605853" duration="1485000" />
+      <workItem from="1692976234974" duration="5537000" />
+=======
       <workItem from="1696588244876" duration="31000" />
+>>>>>>> main
     </task>
     <servers />
   </component>
@@ -130,16 +165,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/usyd/emergency/pojo/Disease.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -1,6 +1,7 @@
 package com.usyd.emergency.pojo;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,9 +25,11 @@ public class User implements UserDetails {
     private int userId;
 
     @Column(name = "name")
+    @JsonProperty("user_name")
     private String userName;
 
     @Column(name = "email")
+    @JsonProperty("user_email")
     private String userEmail;
 
     @Column(name = "phone_number")
@@ -37,8 +40,6 @@ public class User implements UserDetails {
 
     @Column(name = "password")
     private String password;
-
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;

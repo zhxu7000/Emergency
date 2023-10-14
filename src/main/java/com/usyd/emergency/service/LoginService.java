@@ -1,5 +1,7 @@
 package com.usyd.emergency.service;
 
+import com.usyd.emergency.constant.XError;
+import com.usyd.emergency.exception.ConflictException;
 import com.usyd.emergency.pojo.ResponseResult;
 import com.usyd.emergency.pojo.User;
 import com.usyd.emergency.utils.JwtUtil;
@@ -29,14 +31,14 @@ public class LoginService {
     public ResponseResult login(User user) {
 
         //用户在登录页面输入的用户名和密码
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user.getUsername(),user.getPassword());
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user.getUserEmail(),user.getPassword());
 
         //获取AuthenticationManager的authenticate方法来进行用户认证
         Authentication authenticate = authenticationManager.authenticate(authenticationToken);
 
         //判断上面那行的authenticate是否为null，如果是则认证没通过，就抛出异常
         if(Objects.isNull(authenticate)){
-            throw new RuntimeException("login failed");
+            throw new ConflictException(XError.USERNAME_OR_PASSWORD_INCORRECT.getCode(), XError.USERNAME_OR_PASSWORD_INCORRECT.getMsg());
         }
 
         //如果认证通过，就使用userid生成一个jwt，然后把jwt存入ResponseResult后返回
