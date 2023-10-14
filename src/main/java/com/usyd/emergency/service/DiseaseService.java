@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
+import java.security.DigestException;
 import java.security.interfaces.XECKey;
+import java.util.Optional;
 
 @Service
 public class DiseaseService {
@@ -19,40 +21,43 @@ public class DiseaseService {
     public DiseaseService(DiseaseRepository diseaseRepository) {
         this.diseaseRepository = diseaseRepository;
     }
-    public int findDiseaseLevelByName(String diseaseName) {
-        Disease disease = diseaseRepository.findByDiseaseName(diseaseName);
-        return disease.getLevel();
+    public Disease findDiseaseById(Integer id) {
+        Optional<Disease> diseaseOpt = diseaseRepository.findById(id);
+        if (diseaseOpt.isEmpty()) {
+            throw new ConflictException(XError.DATABASE_ERROR.getCode(), "disease not found");
+        }
+        Disease disease = diseaseOpt.get();
+        return disease;
     }
-    public Disease saveDisease(Disease disease) {
+    public Disease addDisease(Disease disease) {
+        if (disease == null || disease.getDiseaseName() == null || disease.getLevel() == 0) {
+            throw new ConflictException(XError.DATABASE_ERROR.getCode(), "can not save this disease, some fields are null");
+        }
+        if (diseaseRepository.findByDiseaseName(disease.getDiseaseName()) != null) {
+            throw new ConflictException(XError.DATABASE_ERROR.getCode(), "disease with this name already exists");
+        }
         return diseaseRepository.save(disease);
     }
 
-    public void updateDisease(String diseaseName, Integer level){
-        Disease disease =diseaseRepository.findByDiseaseName(diseaseName);
-        if (disease == null) {
-            throw new ConflictException(XError.DATABASE_ERROR.getCode(), XError.DATABASE_ERROR.getMsg());
+    public void updateDiseasebyId(Integer diseaseId, String diseaseName, Integer level){
+        Optional<Disease> diseaseOpt = diseaseRepository.findById(diseaseId);
+        if (diseaseOpt.isEmpty()) {
+            throw new ConflictException(XError.DATABASE_ERROR.getCode(), "disease not found");
         }
-        disease.setLevel(level);
-        diseaseRepository.save(disease);
-
-    }
-    public void deleteDiseaseByName(String diseaseName) {
-        Disease disease =diseaseRepository.findByDiseaseName(diseaseName);
-        if (disease == null) {
-            throw new ConflictException(XError.DATABASE_ERROR.getCode(), XError.DATABASE_ERROR.getMsg());
-
+        if (diseaseRepository.findByDiseaseName(diseaseName) != null) {
+            throw new ConflictException(XError.DATABASE_ERROR.getCode(), "disease with this name already exists");
         }
-        diseaseRepository.deleteById(disease.getDiseaseId());
-    }
-
-    public void addDiseaseByName(String diseaseName,Integer level) {
-
-        if (diseaseRepository.findByDiseaseName(diseaseName)!= null) {
-            throw new ConflictException(XError.DATABASE_ERROR.getCode(), "has already existed");
-        }
-       Disease disease = new Disease();
+        Disease disease = diseaseOpt.get();
         disease.setLevel(level);
         disease.setDiseaseName(diseaseName);
         diseaseRepository.save(disease);
     }
+    public void deleteDiseaseById(Integer diseaseId) {
+        Optional<Disease> diseaseOpt = diseaseRepository.findById(diseaseId);
+        if (diseaseOpt.isEmpty()) {
+            throw new ConflictException(XError.DATABASE_ERROR.getCode(), "disease not found");
+        }
+        diseaseRepository.deleteById(diseaseId);
+    }
+
 }

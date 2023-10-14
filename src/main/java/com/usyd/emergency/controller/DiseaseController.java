@@ -1,5 +1,6 @@
 package com.usyd.emergency.controller;
 
+import com.usyd.emergency.dto.DiseaseDTO;
 import com.usyd.emergency.pojo.Disease;
 import com.usyd.emergency.pojo.ResponseResult;
 import com.usyd.emergency.service.DiseaseService;
@@ -10,7 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
-@Controller
+@RestController
+@RequestMapping(value = "/disease")
 public class DiseaseController {
     @Autowired
     DiseaseService diseaseService;
@@ -18,35 +20,36 @@ public class DiseaseController {
         this.diseaseService = diseaseService;
     }
 
-    @PostMapping("/{diseaseName}")
-    public ResponseResult getDiseaseLevel(@PathVariable String diseaseName) {
-        Map<String, Integer> map = new HashMap<>();
-        map.put("level", diseaseService.findDiseaseLevelByName(diseaseName));
-        return new ResponseResult(200,"login successful", map);
+    @GetMapping("/{diseaseId}")
+    public ResponseResult getDiseaseInfo(@PathVariable Integer diseaseId) {
+        Disease disease = diseaseService.findDiseaseById(diseaseId);
+        Map<String, String> map = new HashMap<>();
+        map.put("disease_level", String.valueOf(disease.getLevel()));
+        map.put("disease_name", disease.getDiseaseName());
+        return new ResponseResult(200,"get disease info successful", map);
     }
     @PostMapping
-    public Disease createDisease(@RequestBody Disease disease) {
-        return diseaseService.saveDisease(disease);
+    public ResponseResult createDisease(@RequestBody DiseaseDTO.addDiseaseDTO add) {
+        Disease disease = new Disease();
+        disease.setDiseaseName(add.diseaseName);
+        disease.setLevel(add.diseaseLevel);
+        diseaseService.addDisease(disease);
+        return new ResponseResult(200,"save disease info successful");
     }
 
     //delete disease by name
-    @PostMapping("/{diseaseName}")
-    public ResponseResult deleteDisease(@PathVariable String diseaseName) {
-        diseaseService.deleteDiseaseByName(diseaseName);
+    @DeleteMapping("/{diseaseId}")
+    public ResponseResult deleteDisease(@PathVariable Integer diseaseId) {
+        diseaseService.deleteDiseaseById(diseaseId);
         return new ResponseResult(200,"delete disease successful");
     }
 
     //add disease
-    @PostMapping("/{diseaseName}")
-    public ResponseResult addDisease(@PathVariable String diseaseName, @PathVariable Integer level){
-        diseaseService.addDiseaseByName(diseaseName,level);
-        return new ResponseResult(200,"disease add successful");
-    }
 
     //update disease
-    @PostMapping("/{diseaseName}")
-    public ResponseResult updataDisease(@PathVariable String diseaseName, @PathVariable Integer level){
-        diseaseService.updateDisease(diseaseName,level);
+    @PutMapping
+    public ResponseResult updataDisease(@RequestBody Disease disease){
+        diseaseService.updateDiseasebyId(disease.getDiseaseId(), disease.getDiseaseName(), disease.getLevel());
         return new ResponseResult(200,"disease level update successful");
 
     }
