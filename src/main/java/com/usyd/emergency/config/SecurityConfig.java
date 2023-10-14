@@ -48,7 +48,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 对于登录接口 anonymous表示允许匿名访问
                 .antMatchers("/user/login").anonymous()
                 // 除上面外的所有请求全部需要鉴权认证
-                .anyRequest().authenticated();
+                .anyRequest().permitAll();
 
         http.exceptionHandling().accessDeniedHandler(new AccessDeniedHandlerImpl());
         http.exceptionHandling().authenticationEntryPoint(new AuthenticationEntryPointImpl());
