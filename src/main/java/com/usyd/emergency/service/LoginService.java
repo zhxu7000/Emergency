@@ -31,7 +31,7 @@ public class LoginService {
     public ResponseResult login(User user) {
 
         //用户在登录页面输入的用户名和密码
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user.getUsername(),user.getPassword());
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user.getUserEmail(),user.getPassword());
 
         //获取AuthenticationManager的authenticate方法来进行用户认证
         Authentication authenticate = authenticationManager.authenticate(authenticationToken);

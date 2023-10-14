@@ -7,6 +7,7 @@ import com.usyd.emergency.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -14,20 +15,21 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2023/7/12 0012 11:38
  */
 @RestController
+@RequestMapping("/user")
 public class LoginController {
 
     @Autowired
     //LoginService是我们在service目录写好的接口
     private LoginService loginService;
 
-    @PostMapping("/user/login")
+    @PostMapping("/login")
     //ResponseResult和user是我们在domain目录写好的类
     public ResponseResult login(@RequestBody User user){
         //登录
         return loginService.login(user);
     }
 
-    @PostMapping("/user/logout")
+    @PostMapping("/logout")
     //ResponseResult和user是我们在domain目录写好的类
     public ResponseResult logout(){
         //登录
