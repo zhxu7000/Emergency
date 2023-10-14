@@ -34,6 +34,7 @@ public class DiseaseController {
         disease.setDiseaseName(add.diseaseName);
         disease.setLevel(add.diseaseLevel);
         diseaseService.addDisease(disease);
+
         return new ResponseResult(200,"save disease info successful");
     }
 
