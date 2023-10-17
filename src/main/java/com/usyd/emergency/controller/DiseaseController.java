@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -28,6 +29,15 @@ public class DiseaseController {
         map.put("disease_name", disease.getDiseaseName());
         return new ResponseResult(200,"get disease info successful", map);
     }
+
+    @GetMapping()
+    public ResponseResult getDiseaseInfo() {
+        List<Disease> diseases = diseaseService.getAllDisease();
+        Map<String, List<Disease>> map = new HashMap<>();
+        map.put("diseases", diseases);
+        return new ResponseResult(200,"get disease info successful", map);
+    }
+
     @PostMapping
     public ResponseResult createDisease(@RequestBody DiseaseDTO.addDiseaseDTO add) {
         Disease disease = new Disease();

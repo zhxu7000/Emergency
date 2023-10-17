@@ -4,6 +4,7 @@ import com.usyd.emergency.dto.SubscriptionDTO;
 import com.usyd.emergency.pojo.ResponseResult;
 import com.usyd.emergency.pojo.Subscribes;
 import com.usyd.emergency.service.SubscribeService;
+import com.usyd.emergency.utils.XUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +26,8 @@ public class SubscribeController {
     // 创建或更新订阅
     @PostMapping
     public ResponseResult addSubscription(@RequestBody SubscriptionDTO.addSubscriptionDTO subscription) {
-        subscribeService.createSubscription(subscription.user_id, subscription.disease_id);
+        Integer uid = XUtils.getUid();
+        subscribeService.createSubscription(uid, subscription.disease_id);
         return new ResponseResult(200,"you have successfully subscribed");
     }
 
@@ -33,6 +35,15 @@ public class SubscribeController {
     @GetMapping("/user/{userId}")
     public ResponseResult getSubscriptionsByUserId(@PathVariable Integer userId) {
         List<Integer> dids = subscribeService.getDidsByUserId(userId);
+        Map<String, List<Integer>> map = new HashMap<>();
+        map.put("disease_ids", dids);
+        return new ResponseResult(200,"retrieve successful", map);
+    }
+
+    @GetMapping()
+    public ResponseResult getSubscriptions() {
+        Integer uid = XUtils.getUid();
+        List<Integer> dids = subscribeService.getDidsByUserId(uid);
         Map<String, List<Integer>> map = new HashMap<>();
         map.put("disease_ids", dids);
         return new ResponseResult(200,"retrieve successful", map);
