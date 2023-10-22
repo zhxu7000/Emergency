@@ -39,7 +39,7 @@ public class CaseService {
 
             cases.add(ca);
         }
-        return caseRepository.findAllCases();
+        return cases;
     }
 
     public Case getCaseById(Integer caseId) {
