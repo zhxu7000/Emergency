@@ -2,6 +2,7 @@ package com.usyd.emergency.service;
 
 import com.usyd.emergency.constant.XError;
 import com.usyd.emergency.exception.ConflictException;
+import com.usyd.emergency.pojo.Case;
 import com.usyd.emergency.pojo.Disease;
 import com.usyd.emergency.repository.DiseaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,9 @@ import org.springframework.stereotype.Service;
 import javax.persistence.EntityNotFoundException;
 import java.security.DigestException;
 import java.security.interfaces.XECKey;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -37,6 +41,20 @@ public class DiseaseService {
             throw new ConflictException(XError.DATABASE_ERROR.getCode(), "disease with this name already exists");
         }
         return diseaseRepository.save(disease);
+    }
+
+    public List<Disease> getAllDisease() {
+        Iterator<Disease> iterator = diseaseRepository.findAll().iterator();
+        ArrayList<Disease> diseases = new ArrayList<>();
+        while (iterator.hasNext()) {
+            Disease disease = iterator.next();
+//            if (ca.getLongitude() <= fromLong && ca.getLongitude() >= toLong
+//                    && ca.getLatitude() <= fromLa && ca.getLatitude() >= toLa)
+//            {
+            diseases.add(disease);
+
+        }
+        return diseases;
     }
 
     public void updateDiseasebyId(Integer diseaseId, String diseaseName, Integer level){

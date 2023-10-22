@@ -22,6 +22,7 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
+    @JsonProperty("user_id")
     private int userId;
 
     @Column(name = "name")
@@ -37,6 +38,12 @@ public class User implements UserDetails {
 
     @Column(name = "location")
     private String userLocation;
+
+    @Column(name = "longitude")
+    private String longitude;
+
+    @Column(name = "latitude")
+    private String latitude;
 
     @Column(name = "password")
     private String password;
