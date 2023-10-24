@@ -17,11 +17,11 @@ public class Case {
 
     @Column(name = "longitude", nullable = false)
     @JsonProperty("longitude")
-    private BigDecimal longitude;
+    private String longitude;
 
     @Column(name = "latitude", nullable = false)
     @JsonProperty("latitude")
-    private BigDecimal latitude;
+    private String latitude;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "case_id", nullable = false)

@@ -4,9 +4,11 @@ import com.usyd.emergency.pojo.Case;
 import com.usyd.emergency.pojo.Disease;
 import com.usyd.emergency.pojo.ResponseResult;
 import com.usyd.emergency.service.CaseService;
+import com.usyd.emergency.service.MapService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,10 +18,13 @@ import java.util.Optional;
 @RequestMapping("/cases")
 public class CaseController {
     private final CaseService caseService;
+    private final MapService mapService;
 
     @Autowired
-    public CaseController(CaseService caseService) {
+    public CaseController(CaseService caseService, MapService mapService) {
+
         this.caseService = caseService;
+        this.mapService = mapService;
     }
 
     @GetMapping
@@ -39,18 +44,20 @@ public class CaseController {
     }
 
     @PostMapping
-    public ResponseResult createCase(@RequestBody CaseDTO.addCaseDTO add) {
+    public ResponseResult createCase(@RequestBody CaseDTO.addCaseDTO add) throws Exception {
         Case ca = new Case();
         ca.setDiseaseId(add.disease_id);
-        ca.setLatitude(add.latitude);
-        ca.setLongitude(add.longitude);
+        Map<String, String> res = mapService.getLongitudeAndLatitude(add.location);
+        ca.setLongitude(res.get("Longitude"));
+        ca.setLatitude(res.get("Latitude"));
+        System.out.println(ca);
         caseService.addCase(ca);
         return new ResponseResult(200,"add case successful");
     }
 
     @PutMapping()
-    public ResponseResult updateCase(@RequestBody CaseDTO.updateCaseDTO up) {
-        caseService.updateCase(up.caseId, up.longitude, up.longitude, up.disease_id);
+    public ResponseResult updateCase(@RequestBody CaseDTO.updateCaseDTO up) throws Exception {
+        caseService.updateCase(up.caseId, up.location, up.disease_id);
         return new ResponseResult(200,"update case successful");
     }
 
