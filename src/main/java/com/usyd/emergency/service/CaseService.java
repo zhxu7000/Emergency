@@ -11,23 +11,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class CaseService {
     private final CaseRepository caseRepository;
-
+    private final MapService mapService;
     private final DiseaseRepository diseaseRepository;
 
     @Autowired
     public CaseService(CaseRepository caseRepository,
-                       DiseaseRepository diseaseRepository) {
+                       DiseaseRepository diseaseRepository,
+                       MapService mapService) {
 
         this.caseRepository = caseRepository;
         this.diseaseRepository = diseaseRepository;
+        this.mapService = mapService;
 
     }
 
@@ -50,7 +49,7 @@ public class CaseService {
         return caseOpt.get();
     }
 
-    public Case updateCase(int caseId, BigDecimal longitude, BigDecimal latitude, int diseaseId) {
+    public Case updateCase(int caseId, String location, int diseaseId) throws Exception {
         if (diseaseRepository.findById(diseaseId) == null) {
             throw new ConflictException(XError.DATABASE_ERROR.getCode(), "update case failed, disease with this id does not exist");
         }
@@ -58,8 +57,9 @@ public class CaseService {
             throw new ConflictException(XError.DATABASE_ERROR.getCode(), "update case failed, case with this id does not exist");
         }
         Case ca = caseRepository.findByCaseId(caseId);
-        ca.setLongitude(longitude);
-        ca.setLatitude(latitude);
+        Map<String, String> res = mapService.getLongitudeAndLatitude(location);
+        ca.setLongitude(res.get("Longitutde"));
+        ca.setLatitude(res.get("Latitude"));
         ca.setDiseaseId(diseaseId);
         return caseRepository.save(ca);
     }
@@ -78,15 +78,15 @@ public class CaseService {
         caseRepository.deleteById(caseId);
     }
 
-    public List<Case> getAllCasesWithLocation(BigDecimal fromLong,
-                                              BigDecimal fromLa,
-                                              BigDecimal toLong,
-                                              BigDecimal toLa) {
+    public List<Case> getAllCasesWithLocation(String fromLong,
+                                              String fromLa,
+                                              String toLong,
+                                             String toLa) {
         Iterator<Case> iterator = caseRepository.findAll().iterator();
         ArrayList<Case> cases = new ArrayList<>();
         while (iterator.hasNext()) {
             Case ca = iterator.next();
-//            if (ca.getLongitude() <= fromLong && ca.getLongitude() >= toLong
+//            if (ca.getLongitude().toBigInteger() <= fromLong && ca.getLongitude() >= toLong
 //                    && ca.getLatitude() <= fromLa && ca.getLatitude() >= toLa)
 //            {
             cases.add(ca);

@@ -9,32 +9,29 @@ public class CaseDTO {
     public static class addCaseDTO {
         @JsonProperty("disease_id")
         public int disease_id;
-        @JsonProperty("longitude")
-        public BigDecimal longitude;
-        @JsonProperty("latitude")
-        public BigDecimal latitude;
+        @JsonProperty("location")
+        public String location;
+
     }
 
     public static class updateCaseDTO {
         @JsonProperty("disease_id")
         public int disease_id;
-        @JsonProperty("longitude")
-        public  BigDecimal longitude;
-        @JsonProperty("latitude")
-        public BigDecimal latitude;
+        @JsonProperty("location")
+        public  String location;
         @JsonProperty("case_id")
         public Integer caseId;
     }
 
     public static class locationDTO {
         @JsonProperty("from_longitude")
-        public  BigDecimal fromLongitude;
+        public  String fromLongitude;
         @JsonProperty("from_latitude")
-        public BigDecimal fromLatitude;
+        public String fromLatitude;
         @JsonProperty("to_longitude")
-        public  BigDecimal toLongitude;
+        public  String toLongitude;
         @JsonProperty("to_latitude")
-        public BigDecimal toLatitude;
+        public String toLatitude;
     }
 
 }

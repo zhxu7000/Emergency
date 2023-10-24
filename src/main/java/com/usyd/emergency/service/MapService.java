@@ -48,8 +48,8 @@ public class MapService {
             String lon = firstResult.getString("lon");
             System.out.println("Latitude: " + lat);
             System.out.println("Longitude: " + lon);
-            map.put("Latitude: ", lat);
-            map.put("Longitude: ", lon);
+            map.put("Latitude", lat);
+            map.put("Longitude", lon);
         } else {
             System.out.println("No results found");
         }
