@@ -27,8 +27,10 @@ public class UserService implements UserDetailsService {
         User user = new User();
         user.setUserName(userInput.getUsername());
         user.setUserEmail(userInput.getUserEmail());
-        user.setPassword(userInput.getPassword());
-        user.setUserLocation(userInput.getUserLocation());
+        user.setPassword(Encryption.getMD5Hash(userInput.getPassword()));
+//        user.setUserLocation(userInput.getUserLocation());
+        user.setPhoneNumber(userInput.getPhoneNumber());
+
         user.setLongitude(userInput.getLongitude());
         user.setLatitude(userInput.getLatitude());
         userRepository.save(user);
@@ -50,6 +52,7 @@ public class UserService implements UserDetailsService {
     }
 
     public Map<String, String> getLongitudeAndLatitude (String str) throws  Exception{
+
         return mapService.getLongitudeAndLatitude(str);
     }
 

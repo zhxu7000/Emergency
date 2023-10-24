@@ -8,6 +8,7 @@ import com.usyd.emergency.service.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -46,25 +47,30 @@ public class UserController {
         return userService.findByUserName("yuri");
     }
 
-    @RequestMapping("register")
+    @PostMapping    ("/register")
     public String registerUser(User user){
+        System.out.println(111);
         if(user == null || StringUtils.isBlank(user.getUsername()) || StringUtils.isBlank(user.getUserEmail()) ||
           StringUtils.isBlank(user.getPassword())){
+
             return "false";
         }
-        if(StringUtils.isNotBlank(user.getUsername())){
-            return "false";
-        }
+//        if(StringUtils.isNotBlank(getUser(user.getUsername()).getUsername())){
+//
+//            return "false";
+//        }
 //        userService.addUser(user.getUsername(),user)
         Map<String, String> res = new HashMap<>();
         try {
             res = userService.getLongitudeAndLatitude(user.getUserLocation());
+            System.out.println("res" + res);
         } catch (Exception e) {
             System.out.println("location error");
             throw new RuntimeException(e);
         }
-        user.setLatitude(res.get("lat"));
-        user.setLongitude(res.get("lon"));
+
+        user.setLatitude(res.get("Latitude"));
+        user.setLongitude(res.get("Longitude"));
         userService.addUser(user);
         return "true";
     }

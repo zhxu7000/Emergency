@@ -46,10 +46,8 @@ public class MapService {
             JSONObject firstResult = jsonArray.getJSONObject(0);
             String lat = firstResult.getString("lat");
             String lon = firstResult.getString("lon");
-            System.out.println("Latitude: " + lat);
-            System.out.println("Longitude: " + lon);
-            map.put("Latitude: ", lat);
-            map.put("Longitude: ", lon);
+            map.put("Latitude", lat);
+            map.put("Longitude", lon);
         } else {
             System.out.println("No results found");
         }
