@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:mysql://emergency.cf7kho6gj4kt.ap-southeast-2.rds.amazonaws.com:3306</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="cloud_db" uuid="00f3397e-e798-4826-971e-587a02ca22e3">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://emergency.cf7kho6gj4kt.ap-southeast-2.rds.amazonaws.com:3306/emergency?characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=Australia/Sydney</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

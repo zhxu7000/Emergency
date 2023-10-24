@@ -1,12 +1,23 @@
 package com.usyd.emergency.controller;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.usyd.emergency.exception.ConflictException;
 import com.usyd.emergency.pojo.User;
 import com.usyd.emergency.service.UserService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+
 @RestController
 public class UserController {
 
@@ -33,5 +44,28 @@ public class UserController {
     @RequestMapping("/get")
     public User getUser(String userName) {
         return userService.findByUserName("yuri");
+    }
+
+    @RequestMapping("register")
+    public String registerUser(User user){
+        if(user == null || StringUtils.isBlank(user.getUsername()) || StringUtils.isBlank(user.getUserEmail()) ||
+          StringUtils.isBlank(user.getPassword())){
+            return "false";
+        }
+        if(StringUtils.isNotBlank(user.getUsername())){
+            return "false";
+        }
+//        userService.addUser(user.getUsername(),user)
+        Map<String, String> res = new HashMap<>();
+        try {
+            res = userService.getLongitudeAndLatitude(user.getUserLocation());
+        } catch (Exception e) {
+            System.out.println("location error");
+            throw new RuntimeException(e);
+        }
+        user.setLatitude(res.get("lat"));
+        user.setLongitude(res.get("lon"));
+        userService.addUser(user);
+        return "true";
     }
 }

@@ -9,22 +9,28 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 @Service
 public class UserService implements UserDetailsService {
 
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    MapService mapService;
     public Iterable<User> getAll() {
         return userRepository.findAll();
     }
 
-    public boolean addUser(String name, String  password, String  email, String phoneNumber, String location) {
+    public boolean addUser(User userInput) {
         User user = new User();
-        user.setUserName(name);
-        user.setUserEmail(email);
-        user.setPassword(password);
-        user.setUserLocation(location);
+        user.setUserName(userInput.getUsername());
+        user.setUserEmail(userInput.getUserEmail());
+        user.setPassword(userInput.getPassword());
+        user.setUserLocation(userInput.getUserLocation());
+        user.setLongitude(userInput.getLongitude());
+        user.setLatitude(userInput.getLatitude());
         userRepository.save(user);
         return true;
     }
@@ -41,6 +47,10 @@ public class UserService implements UserDetailsService {
             throw new UsernameNotFoundException("User '" + username + "' not found");
         }
         return user;
+    }
+
+    public Map<String, String> getLongitudeAndLatitude (String str) throws  Exception{
+        return mapService.getLongitudeAndLatitude(str);
     }
 
 }

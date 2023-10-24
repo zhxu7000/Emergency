@@ -2,15 +2,13 @@ package com.usyd.emergency.service;
 
 import com.usyd.emergency.constant.XError;
 import com.usyd.emergency.exception.ConflictException;
-import com.usyd.emergency.pojo.Case;
+
 import com.usyd.emergency.pojo.Disease;
 import com.usyd.emergency.repository.DiseaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityNotFoundException;
-import java.security.DigestException;
-import java.security.interfaces.XECKey;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
