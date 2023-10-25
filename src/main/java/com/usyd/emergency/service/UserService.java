@@ -60,4 +60,7 @@ public class UserService implements UserDetailsService {
         return mapService.getLongitudeAndLatitude(str);
     }
 
+    public User updateUser(User user) {
+        return userRepository.save(user);
+    }
 }
