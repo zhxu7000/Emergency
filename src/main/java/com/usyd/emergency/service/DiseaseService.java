@@ -33,9 +33,6 @@ public class DiseaseService {
         return disease;
     }
     public Disease addDisease(Disease disease) {
-        if (XUtils.isAdmin() == false) {
-            throw new ConflictException(XError.UNAUTHORIZED.getCode(), "no permission");
-        }
         if (disease == null || disease.getDiseaseName() == null || disease.getLevel() == 0) {
             throw new ConflictException(XError.DATABASE_ERROR.getCode(), "can not save this disease, some fields are null");
         }
@@ -60,9 +57,6 @@ public class DiseaseService {
     }
 
     public void updateDiseasebyId(Integer diseaseId, String diseaseName, Integer level){
-        if (XUtils.isAdmin() == false) {
-            throw new ConflictException(XError.UNAUTHORIZED.getCode(), "no permission");
-        }
         Optional<Disease> diseaseOpt = diseaseRepository.findById(diseaseId);
         if (diseaseOpt.isEmpty()) {
             throw new ConflictException(XError.DATABASE_ERROR.getCode(), "disease not found");
@@ -76,9 +70,6 @@ public class DiseaseService {
         diseaseRepository.save(disease);
     }
     public void deleteDiseaseById(Integer diseaseId) {
-        if (XUtils.isAdmin() == false) {
-            throw new ConflictException(XError.UNAUTHORIZED.getCode(), "no permission");
-        }
         Optional<Disease> diseaseOpt = diseaseRepository.findById(diseaseId);
         if (diseaseOpt.isEmpty()) {
             throw new ConflictException(XError.DATABASE_ERROR.getCode(), "disease not found");

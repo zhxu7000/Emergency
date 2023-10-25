@@ -51,9 +51,6 @@ public class CaseService {
     }
 
     public Case updateCase(int caseId, String location, int diseaseId) throws Exception {
-        if (XUtils.isAdmin() == false) {
-            throw new ConflictException(XError.UNAUTHORIZED.getCode(), "no permission");
-        }
         if (diseaseRepository.findById(diseaseId) == null) {
             throw new ConflictException(XError.DATABASE_ERROR.getCode(), "update case failed, disease with this id does not exist");
         }
@@ -69,9 +66,6 @@ public class CaseService {
     }
 
     public Case addCase(Case ca) {
-        if (XUtils.isAdmin() == false) {
-            throw new ConflictException(XError.UNAUTHORIZED.getCode(), "no permission");
-        }
         if (diseaseRepository.findById(ca.getDiseaseId()) == null) {
             throw new ConflictException(XError.DATABASE_ERROR.getCode(), "disease with this id does not exist");
         }
@@ -79,9 +73,6 @@ public class CaseService {
     }
 
     public void deleteCase(Integer caseId) {
-        if (XUtils.isAdmin() == false) {
-            throw new ConflictException(XError.UNAUTHORIZED.getCode(), "no permission");
-        }
         if (caseRepository.findById(caseId) == null) {
             throw new ConflictException(XError.DATABASE_ERROR.getCode(), "case with this id does not exist");
         }
