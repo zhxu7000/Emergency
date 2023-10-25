@@ -36,6 +36,10 @@ public class UserService implements UserDetailsService {
         userRepository.save(user);
         return true;
     }
+    public boolean deleteUser(User user){
+        userRepository.delete(user);
+        return true;
+    }
 
     public User findByUserName(String userName) {
         User user = userRepository.findByUserName(userName);

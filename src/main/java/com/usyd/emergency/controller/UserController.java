@@ -52,7 +52,6 @@ public class UserController {
         System.out.println(111);
         if(user == null || StringUtils.isBlank(user.getUsername()) || StringUtils.isBlank(user.getUserEmail()) ||
           StringUtils.isBlank(user.getPassword())){
-
             return "false";
         }
 //        if(StringUtils.isNotBlank(getUser(user.getUsername()).getUsername())){
@@ -71,6 +70,33 @@ public class UserController {
 
         user.setLatitude(res.get("Latitude"));
         user.setLongitude(res.get("Longitude"));
+        userService.addUser(user);
+        return "true";
+    }
+
+    @PostMapping("/update")
+    public String updateUser(User user){
+        if(user == null || StringUtils.isBlank(user.getUsername()) || StringUtils.isBlank(user.getUserEmail()) ||
+                StringUtils.isBlank(user.getPassword())){
+            return "false";
+        }
+        //        if(StringUtils.isBlank(getUser(user.getUsername()).getUsername())){
+//
+//            return "false";
+//        }
+//        userService.addUser(user.getUsername(),user)
+        Map<String, String> res = new HashMap<>();
+        try {
+            res = userService.getLongitudeAndLatitude(user.getUserLocation());
+            System.out.println("res" + res);
+        } catch (Exception e) {
+            System.out.println("location error");
+            throw new RuntimeException(e);
+        }
+
+        user.setLatitude(res.get("Latitude"));
+        user.setLongitude(res.get("Longitude"));
+        userService.deleteUser(userService.findByUserName(user.getUsername()));
         userService.addUser(user);
         return "true";
     }
