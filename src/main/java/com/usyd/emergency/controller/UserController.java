@@ -5,13 +5,19 @@ import com.alibaba.fastjson.JSONObject;
 import com.usyd.emergency.constant.XError;
 import com.usyd.emergency.exception.ConflictException;
 import com.usyd.emergency.pojo.ResponseResult;
+import com.usyd.emergency.pojo.UpdateRequest;
 import com.usyd.emergency.pojo.User;
+import com.usyd.emergency.service.MailService;
 import com.usyd.emergency.service.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.thymeleaf.context.Context;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -29,7 +35,8 @@ public class UserController {
 
     @Autowired
     PasswordEncoder passwordEncoder;
-
+    @Autowired
+    MailService mailService;
     @RequestMapping("/test")
     public String test() {
         throw new ConflictException(-1, "error");
@@ -49,62 +56,56 @@ public class UserController {
         return userService.findByUserName("yuri");
     }
 
-    @PostMapping("/register")
-    public ResponseResult registerUser(User user){
-        if(user == null || StringUtils.isBlank(user.getUsername()) || StringUtils.isBlank(user.getUserEmail()) ||
-          StringUtils.isBlank(user.getPassword())){
-            throw new ConflictException(XError.USERNAME_OR_PASSWORD_INCORRECT.getCode(), "fields can not be null");
-        }
-        Map<String, String> res = new HashMap<>();
-        try {
-            res = userService.getLongitudeAndLatitude(user.getUserLocation());
-            System.out.println("res" + res);
-        } catch (Exception e) {
-            System.out.println("location error");
-            throw new RuntimeException(e);
-        }
-
-        user.setLatitude(res.get("Latitude"));
-        user.setLongitude(res.get("Longitude"));
-        userService.addUser(user);
-        return new  ResponseResult(200, "user registered successfully");
-    }
-
     @PostMapping("/update")
-    public ResponseResult updateUser(User user){
-        if(user == null || StringUtils.isBlank(user.getUsername()) || StringUtils.isBlank(user.getUserEmail()) ||
-                StringUtils.isBlank(user.getPassword())){
-            throw new ConflictException(XError.USERNAME_OR_PASSWORD_INCORRECT.getCode(), "fields can not be null while updating");
-        }
-        //        if(StringUtils.isBlank(getUser(user.getUsername()).getUsername())){
-//
-//            return "false";
-//        }
-//        userService.addUser(user.getUsername(),user)
-        Map<String, String> res = new HashMap<>();
-        try {
-            res = userService.getLongitudeAndLatitude(user.getUserLocation());
-            System.out.println("res" + res);
-        } catch (Exception e) {
-            System.out.println("location error");
-            throw new RuntimeException(e);
+    public ResponseResult updateUser(@RequestBody UpdateRequest updateInfo) {
+
+        System.out.println(updateInfo);
+        // 校验必须提供的字段
+        if (updateInfo == null || StringUtils.isBlank(updateInfo.getUserName()) || StringUtils.isBlank(updateInfo.getPassword())) {
+            throw new ConflictException(XError.USERNAME_OR_PASSWORD_INCORRECT.getCode(), "Username and Password cannot be blank");
         }
 
-        user.setLatitude(res.get("Latitude"));
-        user.setLongitude(res.get("Longitude"));
-        userService.deleteUser(userService.findByUserName(user.getUsername()));
-        userService.addUser(user);
-        return new  ResponseResult(200, "user info updated successfully");
+        // 从数据库中查找用户
+        User existingUser = userService.findByUserName(updateInfo.getUserName());
+        if (existingUser == null || !passwordEncoder.matches(updateInfo.getPassword(), existingUser.getPassword())) {
+            throw new ConflictException(XError.USERNAME_OR_PASSWORD_INCORRECT.getCode(), "Username or Password is incorrect");
+        }
+
+        // 如果提供了新的用户名，则更新用户名
+        if (StringUtils.isNotBlank(updateInfo.getNewUserName())) {
+            if (userService.findByUserName(updateInfo.getNewUserName()) != null) {
+                throw new ConflictException(XError.USERNAME_ALREADY_EXISTS.getCode(), "New Username already exists");
+            }
+            existingUser.setUserName(updateInfo.getNewUserName());
+        }
+
+        // 如果提供了新密码，则更新密码
+        if (StringUtils.isNotBlank(updateInfo.getNewPassword())) {
+            existingUser.setPassword(passwordEncoder.encode(updateInfo.getNewPassword()));
+        }
+
+        // 根据提供的其他字段更新用户信息
+        if (StringUtils.isNotBlank(updateInfo.getUserEmail())) {
+            existingUser.setUserEmail(updateInfo.getUserEmail());
+        }
+        if (StringUtils.isNotBlank(updateInfo.getPhoneNumber())) {
+            existingUser.setPhoneNumber(updateInfo.getPhoneNumber());
+        }
+        if (StringUtils.isNotBlank(updateInfo.getLocation())) {
+            existingUser.setUserLocation(updateInfo.getLocation());
+            // Assuming you have a method to update the latitude and longitude based on location
+            // Map<String, String> locationMap = userService.getLongitudeAndLatitude(updateInfo.getLocation());
+            // existingUser.setLatitude(locationMap.get("Latitude"));
+            // existingUser.setLongitude(locationMap.get("Longitude"));
+        }
+
+        userService.updateUser(existingUser);
+        return new ResponseResult(200, "user info updated successfully");
     }
     @GetMapping("/sendEmail")
-    public String updateUser(String userName, String title, String content){
-        //激活邮件
-        Context context = new Context();
-        context.setVariable("title", title);
-        context.setVariable("content",content);
-        //http://localhost:8080/community/activation/101/code
-        User user = userService.findByUserName(userName);
-        mailClient.sendMail(user.getUserEmail(), "Announcement", content);
+    public boolean sendEmail(String title, String content){
+
+       return  mailService.sendEmail(title, content);
 
     }
 

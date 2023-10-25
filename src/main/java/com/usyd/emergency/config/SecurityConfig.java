@@ -29,6 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
+
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
@@ -46,9 +47,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //指定让spring security放行登录接口的规则
                 .authorizeRequests()
                 // 对于登录接口 anonymous表示允许匿名访问
-                .antMatchers("/user/login").anonymous()
+                .antMatchers("/user/login").anonymous();
                 // 除上面外的所有请求全部需要鉴权认证
-                .anyRequest().permitAll();
 
         http.exceptionHandling().accessDeniedHandler(new AccessDeniedHandlerImpl());
         http.exceptionHandling().authenticationEntryPoint(new AuthenticationEntryPointImpl());

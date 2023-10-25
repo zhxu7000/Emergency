@@ -49,6 +49,7 @@ public class LoginService {
         //把完整的用户信息存入redis，其中userid作为key，注意存入redis的时候加了前缀 login:
         Map<String, String> map = new HashMap<>();
         map.put("token",jwt);
+        map.put("user_id", userid);
         redisCache.setCacheObject("login:"+userid,loginUser);
         return new ResponseResult(200,"login successful",map);
     }

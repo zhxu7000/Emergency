@@ -27,4 +27,15 @@ public class XUtils {
         Integer userId = loginUser.getUserId();
         return userId;
     }
+
+    public static boolean isAdmin() {
+        UsernamePasswordAuthenticationToken authentication
+                = (UsernamePasswordAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
+        User loginUser = (User) authentication.getPrincipal();
+        System.out.println(loginUser);
+        if (loginUser.getIsAdmin() == "1") return true;
+        return false;
+    }
+
+
 }

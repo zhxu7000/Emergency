@@ -5,67 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f55cd7c-1b98-4e12-9fd9-ef4cc247ffd4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/utils/MailClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/pojo/UpdateRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/service/MailService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/constant/XError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/constant/XError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/controller/CaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/controller/CaseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/EmergencyApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/aspect/ServiceLogAspect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/config/CorsConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/config/RedisConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/config/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/constant/XError.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/controller/CaseController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/controller/DiseaseController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/controller/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/controller/MapController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/controller/SubscribeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/dto/CaseDTO$addCaseDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/dto/CaseDTO$locationDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/dto/CaseDTO$updateCaseDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/dto/CaseDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/dto/DiseaseDTO$addDiseaseDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/dto/DiseaseDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/dto/SubscriptionDTO$addSubscriptionDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/dto/SubscriptionDTO$deleteSubscriptionDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/dto/SubscriptionDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/exception/AccessDeniedHandlerImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/exception/AuthenticationEntryPointImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/exception/BaseException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/exception/ConflictException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/exception/FatalException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/exception/Handler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/filter/JwtAuthenticationTokenFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/pojo/Case.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/pojo/Disease.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/pojo/ResponseResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/pojo/Subscribes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/pojo/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/repository/CaseRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/repository/DiseaseRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/repository/SubscribeRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/repository/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/service/CaseService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/service/DiseaseService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/service/Encryption.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/service/LoginService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/service/MapService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/service/SubscribeService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/utils/Context.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/utils/FastJsonRedisSerializer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/utils/JwtUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/utils/MyKey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/utils/RedisCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/utils/WebUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/utils/XUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/usyd/emergency/EmergencyApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/usyd/emergency/RegisterTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/usyd/emergency/userTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/pojo/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/service/CaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/service/CaseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/service/DiseaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/service/DiseaseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/utils/MailClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/utils/MailClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/utils/XUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/utils/XUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

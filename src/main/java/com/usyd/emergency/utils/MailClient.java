@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.stereotype.Component;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
@@ -16,19 +17,17 @@ import javax.mail.internet.MimeMessage;
  * @Author: JunyuLiang
  * @Date: 2023/10/25 - 10 - 25 -15:29
  */
+@Component
 public class MailClient {
     private static final Logger logger = LoggerFactory.getLogger(MailClient.class);
 
-    @Autowired
-    private   UserService userService;
 
     @Autowired
     private JavaMailSender mailSender;
 
     @Value("${spring.mail.username}")
     private String from;
-    public void sendMail(String subject, String content) {
-        userService.getAll()
+    public void sendMail(String to,String subject, String content) {
 
         try {
             MimeMessage message = mailSender.createMimeMessage();

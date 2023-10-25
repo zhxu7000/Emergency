@@ -5,6 +5,7 @@ import com.usyd.emergency.exception.ConflictException;
 
 import com.usyd.emergency.pojo.Disease;
 import com.usyd.emergency.repository.DiseaseRepository;
+import com.usyd.emergency.utils.XUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

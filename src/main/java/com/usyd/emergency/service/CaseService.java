@@ -7,6 +7,7 @@ import com.usyd.emergency.pojo.Case;
 import com.usyd.emergency.repository.CaseRepository;
 import com.usyd.emergency.repository.DiseaseRepository;
 import com.usyd.emergency.repository.UserRepository;
+import com.usyd.emergency.utils.XUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -86,8 +87,8 @@ public class CaseService {
         ArrayList<Case> cases = new ArrayList<>();
         while (iterator.hasNext()) {
             Case ca = iterator.next();
-//            if (ca.getLongitude().toBigInteger() <= fromLong && ca.getLongitude() >= toLong
-//                    && ca.getLatitude() <= fromLa && ca.getLatitude() >= toLa)
+            if (Float.valueOf(ca.getLongitude())  <= Float.valueOf(fromLong)  && Float.valueOf( ca.getLongitude()) >= Float.valueOf(toLong)
+                    && Float.valueOf(ca.getLatitude())  <= Float.valueOf(fromLa)  && Float.valueOf(ca.getLatitude()) >= Float.valueOf(toLa))
 //            {
             cases.add(ca);
 
