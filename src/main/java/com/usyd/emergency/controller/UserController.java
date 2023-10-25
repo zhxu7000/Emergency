@@ -8,9 +8,8 @@ import com.usyd.emergency.service.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.thymeleaf.context.Context;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -100,4 +99,16 @@ public class UserController {
         userService.addUser(user);
         return "true";
     }
+    @GetMapping("/sendEmail")
+    public String updateUser(String userName, String title, String content){
+        //激活邮件
+        Context context = new Context();
+        context.setVariable("title", title);
+        context.setVariable("content",content);
+        //http://localhost:8080/community/activation/101/code
+        User user = userService.findByUserName(userName);
+        mailClient.sendMail(user.getUserEmail(), "Announcement", content);
+
+    }
+
 }

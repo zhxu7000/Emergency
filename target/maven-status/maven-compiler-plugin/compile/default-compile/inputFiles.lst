@@ -7,6 +7,7 @@ D:\5619\Emergency\src\main\java\com\usyd\emergency\repository\UserRepository.jav
 D:\5619\Emergency\src\main\java\com\usyd\emergency\utils\FastJsonRedisSerializer.java
 D:\5619\Emergency\src\main\java\com\usyd\emergency\controller\UserController.java
 D:\5619\Emergency\src\main\java\com\usyd\emergency\exception\FatalException.java
+D:\5619\Emergency\src\main\java\com\usyd\emergency\service\Encryption.java
 D:\5619\Emergency\src\main\java\com\usyd\emergency\config\CorsConfig.java
 D:\5619\Emergency\src\main\java\com\usyd\emergency\exception\Handler.java
 D:\5619\Emergency\src\main\java\com\usyd\emergency\service\CaseService.java
@@ -20,6 +21,7 @@ D:\5619\Emergency\src\main\java\com\usyd\emergency\config\RedisConfig.java
 D:\5619\Emergency\src\main\java\com\usyd\emergency\dto\CaseDTO.java
 D:\5619\Emergency\src\main\java\com\usyd\emergency\exception\BaseException.java
 D:\5619\Emergency\src\main\java\com\usyd\emergency\pojo\User.java
+D:\5619\Emergency\src\main\java\com\usyd\emergency\utils\MailClient.java
 D:\5619\Emergency\src\main\java\com\usyd\emergency\repository\CaseRepository.java
 D:\5619\Emergency\src\main\java\com\usyd\emergency\utils\MyKey.java
 D:\5619\Emergency\src\main\java\com\usyd\emergency\controller\SubscribeController.java
@@ -39,5 +41,6 @@ D:\5619\Emergency\src\main\java\com\usyd\emergency\repository\DiseaseRepository.
 D:\5619\Emergency\src\main\java\com\usyd\emergency\pojo\ResponseResult.java
 D:\5619\Emergency\src\main\java\com\usyd\emergency\repository\SubscribeRepository.java
 D:\5619\Emergency\src\main\java\com\usyd\emergency\aspect\ServiceLogAspect.java
+D:\5619\Emergency\src\main\java\com\usyd\emergency\service\MapService.java
 D:\5619\Emergency\src\main\java\com\usyd\emergency\service\LoginService.java
 D:\5619\Emergency\src\main\java\com\usyd\emergency\service\UserService.java
