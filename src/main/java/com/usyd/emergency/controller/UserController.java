@@ -2,7 +2,9 @@ package com.usyd.emergency.controller;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.usyd.emergency.constant.XError;
 import com.usyd.emergency.exception.ConflictException;
+import com.usyd.emergency.pojo.ResponseResult;
 import com.usyd.emergency.pojo.User;
 import com.usyd.emergency.service.UserService;
 import org.apache.commons.lang3.StringUtils;
@@ -19,6 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
@@ -46,18 +49,12 @@ public class UserController {
         return userService.findByUserName("yuri");
     }
 
-    @PostMapping    ("/register")
-    public String registerUser(User user){
-        System.out.println(111);
+    @PostMapping("/register")
+    public ResponseResult registerUser(User user){
         if(user == null || StringUtils.isBlank(user.getUsername()) || StringUtils.isBlank(user.getUserEmail()) ||
           StringUtils.isBlank(user.getPassword())){
-            return "false";
+            throw new ConflictException(XError.USERNAME_OR_PASSWORD_INCORRECT.getCode(), "fields can not be null");
         }
-//        if(StringUtils.isNotBlank(getUser(user.getUsername()).getUsername())){
-//
-//            return "false";
-//        }
-//        userService.addUser(user.getUsername(),user)
         Map<String, String> res = new HashMap<>();
         try {
             res = userService.getLongitudeAndLatitude(user.getUserLocation());
@@ -70,14 +67,14 @@ public class UserController {
         user.setLatitude(res.get("Latitude"));
         user.setLongitude(res.get("Longitude"));
         userService.addUser(user);
-        return "true";
+        return new  ResponseResult(200, "user registered successfully");
     }
 
     @PostMapping("/update")
-    public String updateUser(User user){
+    public ResponseResult updateUser(User user){
         if(user == null || StringUtils.isBlank(user.getUsername()) || StringUtils.isBlank(user.getUserEmail()) ||
                 StringUtils.isBlank(user.getPassword())){
-            return "false";
+            throw new ConflictException(XError.USERNAME_OR_PASSWORD_INCORRECT.getCode(), "fields can not be null while updating");
         }
         //        if(StringUtils.isBlank(getUser(user.getUsername()).getUsername())){
 //
@@ -97,7 +94,7 @@ public class UserController {
         user.setLongitude(res.get("Longitude"));
         userService.deleteUser(userService.findByUserName(user.getUsername()));
         userService.addUser(user);
-        return "true";
+        return new  ResponseResult(200, "user info updated successfully");
     }
     @GetMapping("/sendEmail")
     public String updateUser(String userName, String title, String content){
