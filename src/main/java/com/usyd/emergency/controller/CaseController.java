@@ -54,7 +54,7 @@ public class CaseController {
         caseService.addCase(ca);
         return new ResponseResult(200,"add case successful");
     }
-
+    
     @PutMapping()
     public ResponseResult updateCase(@RequestBody CaseDTO.updateCaseDTO up) throws Exception {
         caseService.updateCase(up.caseId, up.location, up.disease_id);

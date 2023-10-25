@@ -7,6 +7,7 @@ import com.usyd.emergency.pojo.Case;
 import com.usyd.emergency.repository.CaseRepository;
 import com.usyd.emergency.repository.DiseaseRepository;
 import com.usyd.emergency.repository.UserRepository;
+import com.usyd.emergency.utils.XUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -50,6 +51,9 @@ public class CaseService {
     }
 
     public Case updateCase(int caseId, String location, int diseaseId) throws Exception {
+        if (XUtils.isAdmin() == false) {
+            throw new ConflictException(XError.UNAUTHORIZED.getCode(), "no permission");
+        }
         if (diseaseRepository.findById(diseaseId) == null) {
             throw new ConflictException(XError.DATABASE_ERROR.getCode(), "update case failed, disease with this id does not exist");
         }
@@ -65,6 +69,9 @@ public class CaseService {
     }
 
     public Case addCase(Case ca) {
+        if (XUtils.isAdmin() == false) {
+            throw new ConflictException(XError.UNAUTHORIZED.getCode(), "no permission");
+        }
         if (diseaseRepository.findById(ca.getDiseaseId()) == null) {
             throw new ConflictException(XError.DATABASE_ERROR.getCode(), "disease with this id does not exist");
         }
@@ -72,6 +79,9 @@ public class CaseService {
     }
 
     public void deleteCase(Integer caseId) {
+        if (XUtils.isAdmin() == false) {
+            throw new ConflictException(XError.UNAUTHORIZED.getCode(), "no permission");
+        }
         if (caseRepository.findById(caseId) == null) {
             throw new ConflictException(XError.DATABASE_ERROR.getCode(), "case with this id does not exist");
         }
@@ -86,8 +96,8 @@ public class CaseService {
         ArrayList<Case> cases = new ArrayList<>();
         while (iterator.hasNext()) {
             Case ca = iterator.next();
-//            if (ca.getLongitude().toBigInteger() <= fromLong && ca.getLongitude() >= toLong
-//                    && ca.getLatitude() <= fromLa && ca.getLatitude() >= toLa)
+            if (Float.valueOf(ca.getLongitude())  <= Float.valueOf(fromLong)  && Float.valueOf( ca.getLongitude()) >= Float.valueOf(toLong)
+                    && Float.valueOf(ca.getLatitude())  <= Float.valueOf(fromLa)  && Float.valueOf(ca.getLatitude()) >= Float.valueOf(toLa))
 //            {
             cases.add(ca);
 

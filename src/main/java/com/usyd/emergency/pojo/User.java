@@ -47,6 +47,10 @@ public class User implements UserDetails {
 
     @Column(name = "password")
     private String password;
+
+    @Column(name = "is_admin")
+    private String isAdmin;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
@@ -149,7 +153,10 @@ public class User implements UserDetails {
                 ", userEmail='" + userEmail + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", userLocation='" + userLocation + '\'' +
+                ", longitude='" + longitude + '\'' +
+                ", latitude='" + latitude + '\'' +
                 ", password='" + password + '\'' +
+                ", isAdmin=" + isAdmin +
                 '}';
     }
 }
