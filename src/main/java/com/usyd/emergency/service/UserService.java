@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -18,6 +19,9 @@ public class UserService implements UserDetailsService {
     UserRepository userRepository;
 
     @Autowired
+    PasswordEncoder passwordEncoder;
+
+    @Autowired
     MapService mapService;
     public Iterable<User> getAll() {
         return userRepository.findAll();
@@ -27,7 +31,7 @@ public class UserService implements UserDetailsService {
         User user = new User();
         user.setUserName(userInput.getUsername());
         user.setUserEmail(userInput.getUserEmail());
-        user.setPassword(Encryption.getMD5Hash(userInput.getPassword()));
+        user.setPassword(passwordEncoder.encode(userInput.getPassword()));
 //        user.setUserLocation(userInput.getUserLocation());
         user.setPhoneNumber(userInput.getPhoneNumber());
 
@@ -43,6 +47,11 @@ public class UserService implements UserDetailsService {
 
     public User findByUserName(String userName) {
         User user = userRepository.findByUserName(userName);
+        return user;
+    }
+
+    public User findByUserEmail(String userEmail){
+        User user = userRepository.findByUserEmail(userEmail);
         return user;
     }
 
