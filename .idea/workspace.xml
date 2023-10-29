@@ -152,6 +152,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EmergencyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Emergency" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.usyd.emergency.EmergencyApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Unnamed" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="emergency" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.usyd.emergency.EmergencyApplication" />
@@ -165,6 +172,7 @@
       <item itemvalue="JUnit.SubscribeServiceTest.testGetDidsByUserId" />
       <item itemvalue="JUnit.SubscribeServiceTest.testGetUidsByDiseaseId" />
       <item itemvalue="JUnit.SubscribeServiceTest.testUnsubscribeByDid" />
+      <item itemvalue="Spring Boot.EmergencyApplication" />
       <item itemvalue="Spring Boot.Unnamed" />
     </list>
     <recent_temporary>
