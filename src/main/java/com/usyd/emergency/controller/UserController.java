@@ -92,16 +92,52 @@ public class UserController {
             existingUser.setPhoneNumber(updateInfo.getPhoneNumber());
         }
         if (StringUtils.isNotBlank(updateInfo.getLocation())) {
-            existingUser.setUserLocation(updateInfo.getLocation());
-            // Assuming you have a method to update the latitude and longitude based on location
-            // Map<String, String> locationMap = userService.getLongitudeAndLatitude(updateInfo.getLocation());
-            // existingUser.setLatitude(locationMap.get("Latitude"));
-            // existingUser.setLongitude(locationMap.get("Longitude"));
+//            existingUser.setUserLocation(updateInfo.getLocation());
+            Map<String, String> res = new HashMap<>();
+            try {
+                res = userService.getLongitudeAndLatitude(updateInfo.getLocation());
+                System.out.println("res" + res);
+            } catch (Exception e) {
+                System.out.println("location error");
+                throw new RuntimeException(e);
+            }
+
+            existingUser.setLatitude(res.get("Latitude"));
+            existingUser.setLongitude(res.get("Longitude"));
         }
 
         userService.updateUser(existingUser);
         return new ResponseResult(200, "user info updated successfully");
     }
+
+    @PostMapping("/register")
+    public ResponseResult registerUser(@RequestBody User user){
+        System.out.println(user.getUserEmail());
+        if (StringUtils.isNotBlank(user.getUserEmail())) {
+            if (userService.findByUserEmail(user.getUserEmail()) != null) {
+                throw new ConflictException(XError.USERNAME_ALREADY_EXISTS.getCode(), "Email already exists");
+            }
+        }
+        if(user == null || StringUtils.isBlank(user.getUsername()) || StringUtils.isBlank(user.getUserEmail()) ||
+                StringUtils.isBlank(user.getPassword())){
+            throw new ConflictException(XError.USERNAME_OR_PASSWORD_INCORRECT.getCode(), "fields can not be null");
+        }
+        Map<String, String> res = new HashMap<>();
+        try {
+            res = userService.getLongitudeAndLatitude(user.getUserLocation());
+            System.out.println("res" + res);
+        } catch (Exception e) {
+            System.out.println("location error");
+            throw new RuntimeException(e);
+        }
+
+        user.setLatitude(res.get("Latitude"));
+        user.setLongitude(res.get("Longitude"));
+        userService.addUser(user);
+        return new  ResponseResult(200, "user registered successfully");
+    }
+
+
     @GetMapping("/sendEmail")
     public boolean sendEmail(String title, String content){
 

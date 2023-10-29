@@ -46,6 +46,8 @@ public class CaseController {
     @PostMapping
     public ResponseResult createCase(@RequestBody CaseDTO.addCaseDTO add) throws Exception {
         Case ca = new Case();
+        System.out.println(add.disease_id);
+        System.out.println(add.location);
         ca.setDiseaseId(add.disease_id);
         Map<String, String> res = mapService.getLongitudeAndLatitude(add.location);
         ca.setLongitude(res.get("Longitude"));

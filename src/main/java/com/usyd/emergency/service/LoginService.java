@@ -50,6 +50,10 @@ public class LoginService {
         Map<String, String> map = new HashMap<>();
         map.put("token",jwt);
         map.put("user_id", userid);
+        map.put("is_admin", loginUser.getIsAdmin());
+        map.put("user_name", loginUser.getUserName());
+        map.put("lat", loginUser.getLatitude());
+        map.put("lng", loginUser.getLongitude());
         redisCache.setCacheObject("login:"+userid,loginUser);
         return new ResponseResult(200,"login successful",map);
     }
