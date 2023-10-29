@@ -22,7 +22,7 @@
 - org.projectlombok:lombok
 - org.springframework.boot:spring-boot-starter-test
 - org.springframework.security:spring-security-test
-
+## Frontend Libraries
 ## Working functionalities
 - The system enables the user to register / log in / log out. 
 - The system can present the case and hospital situation in the form of a map. 
@@ -37,3 +37,6 @@
 - The system provides an intelligent chatbot.
 - The system provides some guidance to the users about how to use the system.
 - This system provides contact information for the operations team. 
+- This system provides an automatic avatar generation for users.
+- This system provides colour-coded map markers based on the type of infectious disease.
+
