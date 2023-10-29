@@ -4,7 +4,7 @@
 Prerequisites:
 
 Java: Spring Boot is Java-based, so you need to ensure Java is installed. Typically, Spring Boot recommends using Java 8, 11, or later versions.
-Maven or Gradle: This depends on the build tool your project uses. Maven and Gradle are the two most commonly used.
+Maven 
 Installation Steps
 
 a. Installing Java:
