@@ -48,7 +48,7 @@ npm install
 npm start
 ```
 
-## Front Dependencies
+## Frontend Dependencies
 
 | Dependency                                        | Version  |
 | ------------------------------------------------- | -------- |
