@@ -5,20 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f55cd7c-1b98-4e12-9fd9-ef4cc247ffd4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/pojo/UpdateRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/service/MailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/usyd/emergency/CaseServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/usyd/emergency/DiseaseServiceTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/usyd/emergency/MailServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/constant/XError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/constant/XError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/controller/CaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/controller/CaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/pojo/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/service/CaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/service/CaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/service/DiseaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/service/DiseaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/service/LoginService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot.log" beforeDir="false" afterPath="$PROJECT_DIR$/springboot.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/pojo/Subscribes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/pojo/Subscribes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/utils/MailClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/utils/MailClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/utils/XUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/utils/XUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/usyd/emergency/EmergencyApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/usyd/emergency/RegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/usyd/emergency/MapServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/usyd/emergency/userTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/usyd/emergency/SubscribeServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/utils/MailClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/utils/MailClient.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,24 +71,8 @@
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
-  <component name="RunManager" selected="Spring Boot.EmergencyApplication">
-    <configuration name="EmergencyApplicationTests.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="emergency" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.usyd.emergency.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.usyd.emergency" />
-      <option name="MAIN_CLASS_NAME" value="com.usyd.emergency.EmergencyApplicationTests" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegisterTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.SubscribeServiceTest.testGetDidsByUserId">
+    <configuration name="SubscribeServiceTest.testCreateSubscription_invalidInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Emergency" />
       <extension name="coverage">
         <pattern>
@@ -98,22 +81,73 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.usyd.emergency" />
-      <option name="MAIN_CLASS_NAME" value="com.usyd.emergency.RegisterTest" />
-      <option name="METHOD_NAME" value="test1" />
+      <option name="MAIN_CLASS_NAME" value="com.usyd.emergency.SubscribeServiceTest" />
+      <option name="METHOD_NAME" value="testCreateSubscription_invalidInput" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EmergencyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="SubscribeServiceTest.testCreateSubscription_validInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Emergency" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.usyd.emergency.EmergencyApplication" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.usyd.emergency.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.usyd.emergency" />
+      <option name="MAIN_CLASS_NAME" value="com.usyd.emergency.SubscribeServiceTest" />
+      <option name="METHOD_NAME" value="testCreateSubscription_validInput" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SubscribeServiceTest.testGetDidsByUserId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Emergency" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.usyd.emergency.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.usyd.emergency" />
+      <option name="MAIN_CLASS_NAME" value="com.usyd.emergency.SubscribeServiceTest" />
+      <option name="METHOD_NAME" value="testGetDidsByUserId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SubscribeServiceTest.testGetUidsByDiseaseId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Emergency" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.usyd.emergency.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.usyd.emergency" />
+      <option name="MAIN_CLASS_NAME" value="com.usyd.emergency.SubscribeServiceTest" />
+      <option name="METHOD_NAME" value="testGetUidsByDiseaseId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SubscribeServiceTest.testUnsubscribeByDid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Emergency" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.usyd.emergency.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.usyd.emergency" />
+      <option name="MAIN_CLASS_NAME" value="com.usyd.emergency.SubscribeServiceTest" />
+      <option name="METHOD_NAME" value="testUnsubscribeByDid" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -126,16 +160,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.RegisterTest.test1" />
-      <item itemvalue="JUnit.EmergencyApplicationTests.test" />
+      <item itemvalue="JUnit.SubscribeServiceTest.testCreateSubscription_invalidInput" />
+      <item itemvalue="JUnit.SubscribeServiceTest.testCreateSubscription_validInput" />
+      <item itemvalue="JUnit.SubscribeServiceTest.testGetDidsByUserId" />
+      <item itemvalue="JUnit.SubscribeServiceTest.testGetUidsByDiseaseId" />
+      <item itemvalue="JUnit.SubscribeServiceTest.testUnsubscribeByDid" />
       <item itemvalue="Spring Boot.Unnamed" />
-      <item itemvalue="Spring Boot.EmergencyApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.EmergencyApplication" />
-        <item itemvalue="JUnit.RegisterTest.test1" />
-        <item itemvalue="JUnit.EmergencyApplicationTests.test" />
+        <item itemvalue="JUnit.SubscribeServiceTest.testGetDidsByUserId" />
+        <item itemvalue="JUnit.SubscribeServiceTest.testCreateSubscription_validInput" />
+        <item itemvalue="JUnit.SubscribeServiceTest.testCreateSubscription_invalidInput" />
+        <item itemvalue="JUnit.SubscribeServiceTest.testGetUidsByDiseaseId" />
+        <item itemvalue="JUnit.SubscribeServiceTest.testUnsubscribeByDid" />
       </list>
     </recent_temporary>
   </component>
@@ -153,6 +191,9 @@
       <workItem from="1698129430761" duration="4729000" />
       <workItem from="1698214004672" duration="2140000" />
       <workItem from="1698216857092" duration="1961000" />
+      <workItem from="1698464642855" duration="2159000" />
+      <workItem from="1698487133024" duration="4126000" />
+      <workItem from="1698492834509" duration="1479000" />
     </task>
     <servers />
   </component>
@@ -169,6 +210,30 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/com/usyd/emergency/DiseaseServiceTests.java</url>
+          <line>126</line>
+          <properties class="com.usyd.emergency.DiseaseServiceTests">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/com/usyd/emergency/DiseaseServiceTests.java</url>
+          <line>112</line>
+          <properties class="com.usyd.emergency.DiseaseServiceTests">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Emergency$Unnamed.ic" NAME="Unnamed Coverage Results" MODIFIED="1697274240363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

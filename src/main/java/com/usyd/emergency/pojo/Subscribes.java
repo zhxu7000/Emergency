@@ -21,4 +21,11 @@ public class Subscribes {
     @JsonProperty("disease_id")
     private int diseaseId;
 
+    public Subscribes(int userId, int diseaseId) {
+        this.userId = userId;
+        this.diseaseId = diseaseId;
+    }
+
+    public Subscribes() {
+    }
 }

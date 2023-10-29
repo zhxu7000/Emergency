@@ -14,7 +14,7 @@ import java.net.URL;
  * @Author: JunyuLiang
  * @Date: 2023/10/23 - 10 - 23 -18:17
  */
-public class RegisterTest {
+public class MapServiceTest {
     @Test
     public void test1() throws  Exception{
         String address = "5 Sam Sing St, Waterloo NSW 2017";
