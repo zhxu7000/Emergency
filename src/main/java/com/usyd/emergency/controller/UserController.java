@@ -139,10 +139,10 @@ public class UserController {
 
 
     @GetMapping("/sendEmail")
-    public boolean sendEmail(String title, String content){
-
-       return  mailService.sendEmail(title, content);
-
+    public ResponseResult sendEmail(String title, String content){
+        if(mailService.sendEmail(title, content)){
+            return new  ResponseResult(200, "Sent Email Successfully");
+        }
+        return new  ResponseResult(500, "Sent Email Failed");
     }
-
 }
