@@ -1,5 +1,28 @@
 # Emergency
+## Backend Installation
 
+Prerequisites:
+
+Java: Spring Boot is Java-based, so you need to ensure Java is installed. Typically, Spring Boot recommends using Java 8, 11, or later versions.
+Maven or Gradle: This depends on the build tool your project uses. Maven and Gradle are the two most commonly used.
+Installation Steps
+
+a. Installing Java:
+
+Download and install the Java JDK. It can be obtained from the Oracle official website or other Java distribution sites.
+Configure the environment variables. Ensure that JAVA_HOME is set and that the bin directory is added to the PATH.
+b. Installing Maven (if the project uses Maven):
+
+Download the appropriate version of Maven from the official Maven website.
+Unzip and configure the environment variables. Ensure that MAVEN_HOME or M2_HOME is set, and the bin directory is added to the PATH.
+Using Maven:
+
+bash:
+mvn clean install
+mvn spring-boot:run
+Accessing the Application
+
+Once the application starts successfully, you can access it in your browser at the default address http://localhost:8080, unless you've changed the default port in the configurations.
 ## Backend Libraries
 - org.springframework.boot:spring-boot-starter-security
 - **Version 2.7.15-SNAPSHOT**
