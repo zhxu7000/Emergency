@@ -30,19 +30,19 @@
 git clone <repository URL>
 ```
 
-1. Navigate to the project directory:
+2. Navigate to the project directory:
 
 ```
 cd alert-sphere
 ```
 
-1. Install the dependencies:
+3. Install the dependencies:
 
 ```
 npm install
 ```
 
-1. Run the project:
+4. Run the project:
 
 ```
 npm start
