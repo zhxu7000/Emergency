@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f55cd7c-1b98-4e12-9fd9-ef4cc247ffd4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/usyd/emergency/CaseServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/usyd/emergency/DiseaseServiceTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/usyd/emergency/MailServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot.log" beforeDir="false" afterPath="$PROJECT_DIR$/springboot.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/pojo/Subscribes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/pojo/Subscribes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/utils/MailClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/utils/MailClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/usyd/emergency/EmergencyApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/usyd/emergency/RegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/usyd/emergency/MapServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/usyd/emergency/userTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/usyd/emergency/SubscribeServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/usyd/emergency/utils/MailClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/usyd/emergency/utils/MailClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/aspect/ServiceLogAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/usyd/emergency/aspect/ServiceLogAspect.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,30 +208,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/com/usyd/emergency/DiseaseServiceTests.java</url>
-          <line>126</line>
-          <properties class="com.usyd.emergency.DiseaseServiceTests">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/com/usyd/emergency/DiseaseServiceTests.java</url>
-          <line>112</line>
-          <properties class="com.usyd.emergency.DiseaseServiceTests">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Emergency$Unnamed.ic" NAME="Unnamed Coverage Results" MODIFIED="1697274240363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
